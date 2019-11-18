@@ -28,7 +28,7 @@ const Nav = () => {
               <div className ="saltyPeople">Two</div>
               <div className ="saltyPeople">Three</div>
           </div>
-
+          <p className ="textBox">We measure the saltiness/negativity of your users, allowing you to filter out negativity form your social platform, and provide a more positive experience to your users. We also allow users on our map to vote on particular users, allowing a more fine grained selection process.</p>
       </div>
     </div>
   );
