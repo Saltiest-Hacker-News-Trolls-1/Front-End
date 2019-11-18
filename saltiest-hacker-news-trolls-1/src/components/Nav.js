@@ -24,9 +24,9 @@ const Nav = () => {
       <h1 className="title">HACKER</h1>
       <div className="saltyPeopleSection">
           <div className="saltyPeopleBox">
-              <div className ="saltyPeople">One</div>
-              <div className ="saltyPeople">Two</div>
-              <div className ="saltyPeople">Three</div>
+              <div className ="saltyPeople">John D Rockefeller</div>
+              <div className ="saltyPeople">Chaung Hee</div>
+              <div className ="saltyPeople">Francis Ngannou</div>
           </div>
           <p className ="textBox">We measure the saltiness/negativity of your users, allowing you to filter out negativity form your social platform, and provide a more positive experience to your users. We also allow users on our map to vote on particular users, allowing a more fine grained selection process.</p>
       </div>
