@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import FormikLoginForm from './components/LoginForm';
+import PrivateRoute from "./components/PrivateRoute";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
@@ -15,7 +17,13 @@ function App() {
         {/* Other links */}
 
       </nav>
-      <Route exact path="/login" render={props => <FormikLoginForm {...props} />} />
+      <Switch>
+        <PrivateRoute path="/protected">
+          <UserProfile />
+        </PrivateRoute>
+        <Route exact path="/login" render={props => <FormikLoginForm {...props} />} />
+      </Switch>
+      
       {/* other routes */}
     </div>
   );
