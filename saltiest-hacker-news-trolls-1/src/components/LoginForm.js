@@ -42,11 +42,15 @@ const FormikLoginForm = withFormik({
         username: Yup.string().required(`Please enter a username.`),
         password: Yup.string().required(`Please enter your password.`)
     }),
-    handleSubmit(values, { setStatus }) {
+    handleSubmit(values) {
         axios
-            .post()
-            .then()
-            .catch();
+            .post("", values)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(`Server responded with ${error.response}`);
+            });
     }
 })(LoginForm)
 
