@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Nav, NavItem, NavLink, } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
 
-    const [activeButton, setActiveButton] = useState();
+    const { pathname } = props.location;
 
     return (
         <Nav pills className="p-2 d-flex justify-content-around mb-2 shadow-sm">
             <NavItem>
-                <Link to="/login"><NavLink active={activeButton === 1} onClick={() => setActiveButton(1)}>Login</NavLink></Link>
+                <Link to="/login"><NavLink active={pathname === "/login"} >Login</NavLink></Link>
             </NavItem>
             <NavItem>
-                <Link to="/signup"><NavLink active={activeButton === 2} onClick={() => setActiveButton(2)}>Sign Up</NavLink></Link>
+                <Link to="/signup"><NavLink active={pathname === "/signup"}>Sign Up</NavLink></Link>
             </NavItem>
         </Nav>
     );
 }
 
-export default Navbar;
+export default withRouter(Navbar);
