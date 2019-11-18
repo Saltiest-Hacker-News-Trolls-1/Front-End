@@ -4,11 +4,10 @@ import * as Yup from "yup";
 import axios from "axios";
 
 const LoginForm = () => {
-
+    return (null)
 }
 
 const FormikLoginForm = withFormik({
-
 })(LoginForm)
 
 export default FormikLoginForm
