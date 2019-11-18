@@ -2,8 +2,8 @@ import React, { useState /*, useEffect*/ } from "react";
 import { Card, CardBody, Button, Alert, Col } from 'reactstrap';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-import {axiosWithAuth} from "../utils/axiosWithAuth";
-import {useHistory} from "react-router-dom";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = ({ errors, touched, handleSubmit, handleChange }) => {
 
@@ -51,7 +51,7 @@ const LoginForm = ({ errors, touched, handleSubmit, handleChange }) => {
                             {touched.password && errors.password && (
                                 <Alert color="danger">{errors.password}</Alert>
                             )}
-                            <Button className="col-xs-12 col-sm-12 col-md-8 col-lg-4 mx-md-auto ml-lg-auto mr-lg-0 mt-2">Log In</Button>
+                            <Button type="submit" className="col-xs-12 col-sm-12 col-md-8 col-lg-4 mx-md-auto ml-lg-auto mr-lg-0 mt-2">Log In</Button>
                         </Form>
                     </CardBody>
                 </Card>
@@ -72,7 +72,7 @@ const FormikLoginForm = withFormik({
         password: Yup.string().required(`Please enter your password.`)
     }),
     handleSubmit(values) {
-        
+
         axiosWithAuth()
             .post("", values)
             .then(response => {
@@ -87,7 +87,7 @@ const FormikLoginForm = withFormik({
     handleChange(values, setValues) {
         setValues({
             ...values,
-            [values.target.name] : values.target.value
+            [values.target.name]: values.target.value
         })
     }
 })(LoginForm)
