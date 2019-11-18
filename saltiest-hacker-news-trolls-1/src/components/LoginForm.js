@@ -6,23 +6,23 @@ import axios from "axios";
 
 const LoginForm = ({ errors, touched }) => {
     return (
-        <div className="login-form">
+        <div className="login-form my-3">
             <Col xs="12" md="8" lg="4" className="mx-auto">
-                <Card>
+                <Card className="shadow-sm">
                     <CardBody>
                         <h1 className="text-center">Login</h1>
                         <Form className="d-flex flex-column justify-content-around">
-                            <label className="text-left">Username:</label>
+                            <label className="text-left mt-2">Username:</label>
                             <Field type="text" name="username" placeholder="Username" />
                             {touched.username && errors.username && (
                                 <Alert color="danger">{errors.username}</Alert>
                             )}
-                            <label className="text-left">Password:</label>
+                            <label className="text-left mt-2">Password:</label>
                             <Field type="password" name="password" placeholder="Password" />
                             {touched.password && errors.password && (
                                 <Alert color="danger">{errors.password}</Alert>
                             )}
-                            <Button className="col-xs-12 col-sm-12 col-md-8 col-lg-4 mx-md-auto ml-lg-auto mr-lg-0">Log In</Button>
+                            <Button className="col-xs-12 col-sm-12 col-md-8 col-lg-4 mx-md-auto ml-lg-auto mr-lg-0 mt-2">Log In</Button>
                         </Form>
                     </CardBody>
                 </Card>
