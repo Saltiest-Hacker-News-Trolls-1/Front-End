@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <Nav pills className="p-3 d-flex justify-content-around">
+        <Nav pills className="p-2 d-flex justify-content-around mb-2 shadow-sm">
             <NavItem>
                 <NavLink> <Link to="/login">Login</Link></NavLink>
             </NavItem>
