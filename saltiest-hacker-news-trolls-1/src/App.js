@@ -12,13 +12,13 @@ import Nav from './components/Nav'
 function App() {
   return (
     <div className="App">
-      <Nav/>
       <Switch>
+        <Route exact path="/" render={props => <Nav {...props} />} />
         <PrivateRoute path="/protected">
           <UserProfile />
         </PrivateRoute>
-        <Route exact path="/login" render={props => <FormikLoginForm {...props} />} />
-        <Route exact path="/register" render={props => <FormikRegisterForm {...props} />} />
+        <Route exact path="/login" render={props => (<><Navbar /> <FormikLoginForm {...props} /></>)} />
+        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} />
       </Switch>
 
       {/* other routes */}
