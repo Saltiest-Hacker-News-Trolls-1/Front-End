@@ -12,7 +12,7 @@ const Navbar = (props) => {
                 <Link to="/login"><NavLink active={pathname === "/login"} >Login</NavLink></Link>
             </NavItem>
             <NavItem>
-                <Link to="/signup"><NavLink active={pathname === "/signup"}>Sign Up</NavLink></Link>
+                <Link to="/register"><NavLink active={pathname === "/register"}>Sign Up</NavLink></Link>
             </NavItem>
         </Nav>
     );
