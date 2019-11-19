@@ -8,17 +8,19 @@ import PrivateRoute from "./components/PrivateRoute";
 import UserProfile from "./components/UserProfile";
 import Navbar from './components/Navigation';
 import Nav from './components/Nav'
+import About from './components/About'
 
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" render={props => <Nav {...props} />} />
+        <Route exact path="/about" render={props => <About {...props} />} />
         <PrivateRoute path="/protected">
           <UserProfile />
         </PrivateRoute>
         <Route exact path="/login" render={props => (<><Navbar /> <FormikLoginForm {...props} /></>)} />
-        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} />
+        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} /> 
       </Switch>
 
       {/* other routes */}
