@@ -4,13 +4,16 @@ import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore, applyMiddleware} from "redux";
+import {createStore, applyMiddleware, combineReducers} from "redux";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {composeWithDevTools} from "redux-devtools-extension";
+import 'bootstrap/dist/css/bootstrap.css';
+import isLoggedIn from "./components/reducers/isLoggedIn"
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger)))
+const store = createStore(isLoggedIn, composeWithDevTools(applyMiddleware(thunk, logger)))
+
 
 ReactDOM.render(
 

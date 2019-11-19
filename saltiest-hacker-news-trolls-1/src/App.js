@@ -6,11 +6,12 @@ import FormikLoginForm from './components/LoginForm';
 import PrivateRoute from "./utils/PrivateRoute";
 import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Nav/>
       <Switch>
         <PrivateRoute path="/protected">
           <UserProfile />
@@ -24,3 +25,4 @@ function App() {
 }
 
 export default App;
+
