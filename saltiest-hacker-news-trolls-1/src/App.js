@@ -7,8 +7,24 @@ import PrivateRoute from "./utils/PrivateRoute";
 import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
 import Nav from './components/Nav'
+import { axiosWithAuth } from './utils/axiosWithAuth';
+import {useHistory} from "react-router-dom"
 
 function App() {
+
+  const history = useHistory()
+
+  const isLoggedIn = () => {
+    axiosWithAuth()
+      .post("")
+      .then(res => {
+        console.log("login", res)
+        localStorage.getItem("token", res.data.payload)
+        history.push("/protected")
+      })
+      .catch(err => console.log(err.response))
+  }
+
   return (
     <div className="App">
       <Nav/>
@@ -16,7 +32,7 @@ function App() {
         <PrivateRoute path="/protected">
           <UserProfile />
         </PrivateRoute>
-        <Route exact path="/login" render={props => <FormikLoginForm {...props} />} />
+        {/* <Route exact path="/login" render={props => <FormikLoginForm {...props} />} /> */}
       </Switch>
 
       {/* other routes */}

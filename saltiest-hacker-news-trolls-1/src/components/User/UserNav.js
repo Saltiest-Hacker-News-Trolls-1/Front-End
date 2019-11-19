@@ -1,10 +1,11 @@
 import React from 'react';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 const UserNav = () => {
 
     const handleLogout = () => {
-        
+        localStorage.clear();
+        window.location.reload()
     }
 
 
@@ -13,12 +14,12 @@ const UserNav = () => {
       
       <div className="Nav">
       <div>
-          <Link className="Register" to="Register">Register</Link>
+          <Link className="UserProfile" to="UserProfile">My Profile</Link>
         </div>
         
         
         <div>
-          <Link className="Logout" to="Logout">Logout</Link>
+          <Link to="/" className="Logout" onClick={handleLogout} >Logout</Link>
           
         </div>
 
@@ -27,3 +28,5 @@ const UserNav = () => {
       </div>
     )
 }
+
+export default UserNav
