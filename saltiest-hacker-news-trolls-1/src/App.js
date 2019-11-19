@@ -3,8 +3,8 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import FormikLoginForm from './components/LoginForm';
-import PrivateRoute from "./components/PrivateRoute";
-import UserProfile from "./components/UserProfile";
+import PrivateRoute from "./utils/PrivateRoute";
+import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
 
 function App() {

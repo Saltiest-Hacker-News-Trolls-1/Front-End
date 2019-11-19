@@ -72,7 +72,7 @@ const FormikLoginForm = withFormik({
         password: Yup.string().required(`Please enter your password.`)
     }),
     handleSubmit(values) {
-        
+        console.log(values)
         axiosWithAuth()
             .post("", values)
             .then(response => {
@@ -85,6 +85,7 @@ const FormikLoginForm = withFormik({
             });
     },
     handleChange(values, setValues) {
+        console.log(values)
         setValues({
             ...values,
             [values.target.name] : values.target.value
