@@ -7,11 +7,12 @@ import FormikRegisterForm from "./components/RegisterForm";
 import PrivateRoute from "./components/PrivateRoute";
 import UserProfile from "./components/UserProfile";
 import Navbar from './components/Navigation';
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Nav/>
       <Switch>
         <PrivateRoute path="/protected">
           <UserProfile />
