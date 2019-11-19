@@ -22,6 +22,10 @@ const About = () => {
           <Link className="About" to="/about">About</Link>
         </div>
 
+        <div>
+          <Link className="Home" to="/">Home</Link>
+        </div>
+
 
       </div>
       <div className="aboutTitle">
@@ -30,9 +34,12 @@ const About = () => {
       <h1 className="aboutTitle3">SALTY?</h1>
       <div className="saltShaker"><img src={saltShaker} alt="saltShaker" />
       </div>
-      <div className="saltyPeopleSection">
+      <div className="saltPileContainer">
+          <div className="saltText">
         <div className="saltPile">
-        <p className="aboutText">We measure the saltiness/negativity of your users, allowing you to filter out negativity form your social platform, and provide a more positive experience to your users. We also allow users on our map to vote on particular users, allowing a more fine grained selection process.</p>
+        <p className="aboutText">We make it our goal to encapsulate the essence of developer rage, the very force that was vital in the making of this website. Here, you will find scores of recorded frustration for your admiration or entertainment.</p>
+        <p className="aboutText">[more sample text]</p>
+        </div>
         </div>
         
       </div>

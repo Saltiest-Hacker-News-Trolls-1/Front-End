@@ -17,6 +17,9 @@ const Navbar = (props) => {
             <NavItem>
             <Link to="/about"><NavLink active={pathname === "/about"}>about</NavLink></Link>
             </NavItem>
+            <NavItem>
+            <Link to="/"><NavLink active={pathname === "/"}>home</NavLink></Link>
+            </NavItem>
         </Nav>
     );
 }
