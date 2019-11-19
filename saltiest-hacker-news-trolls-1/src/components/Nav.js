@@ -16,6 +16,10 @@ const Nav = () => {
           <Link className="Login" to="/login">Login</Link>
 
         </div>
+        
+        <div>
+          <Link className="About" to="/about">About</Link>
+        </div>
 
 
       </div>

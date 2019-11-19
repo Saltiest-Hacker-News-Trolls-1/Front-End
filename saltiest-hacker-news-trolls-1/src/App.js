@@ -8,8 +8,12 @@ import PrivateRoute from "./utils/PrivateRoute";
 import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
 import Nav from './components/Nav'
+<<<<<<< HEAD
 import { axiosWithAuth } from './utils/axiosWithAuth';
 import {useHistory} from "react-router-dom"
+=======
+import About from './components/About'
+>>>>>>> 98a9a2ff727c7c18d473e46528164e49db379ee5
 
 function App() {
   console.log(localStorage.token)
@@ -30,11 +34,12 @@ function App() {
     <div className="App" onEnter={isLoggedIn}>
       <Switch>
         <Route exact path="/" render={props => <Nav {...props} />} />
+        <Route exact path="/about" render={props => <About {...props} />} />
         <PrivateRoute path="/protected">
           <UserProfile />
         </PrivateRoute>
         <Route exact path="/login" render={props => (<><Navbar /> <FormikLoginForm {...props} /></>)} />
-        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} />
+        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} /> 
       </Switch>
 
       {/* other routes */}

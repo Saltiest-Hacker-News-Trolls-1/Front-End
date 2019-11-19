@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 40%;
+  width: 50%;
   justify-content: space-around;
   
 }
@@ -84,3 +84,68 @@ box-sizing: border-box;
   align-items: center;
 }
 
+.aboutTitle{
+  margin-top: 5% ;
+}
+
+.aboutTitle1{
+  margin-right: 30%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutTitle2{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutTitle3{
+  margin-left: 30%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saltShaker{
+  width: 25%;
+  margin-top: -20%;
+  margin-left: 15%;
+  background: none;
+}
+
+.saltText{
+  background: #FFFFFF;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50%;
+  padding-bottom: 10%;
+
+  
+  }
+
+  .aboutText{
+    background: white;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .saltPileContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .saltPile{
+    margin-top: -40%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
