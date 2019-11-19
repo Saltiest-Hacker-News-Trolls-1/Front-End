@@ -3,6 +3,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import FormikLoginForm from './components/LoginForm';
+import FormikRegisterForm from "./components/RegisterForm";
 import PrivateRoute from "./utils/PrivateRoute";
 import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
@@ -11,7 +12,7 @@ import { axiosWithAuth } from './utils/axiosWithAuth';
 import {useHistory} from "react-router-dom"
 
 function App() {
-
+  console.log(localStorage.token)
   const history = useHistory()
 
   const isLoggedIn = () => {
@@ -19,20 +20,21 @@ function App() {
       .post("")
       .then(res => {
         console.log("login", res)
-        localStorage.getItem("token", res.data.payload)
+        localStorage.setItem("token", res.data.payload)
         history.push("/protected")
       })
       .catch(err => console.log(err.response))
   }
 
   return (
-    <div className="App">
-      <Nav/>
+    <div className="App" onEnter={isLoggedIn}>
       <Switch>
+        <Route exact path="/" render={props => <Nav {...props} />} />
         <PrivateRoute path="/protected">
           <UserProfile />
         </PrivateRoute>
-        {/* <Route exact path="/login" render={props => <FormikLoginForm {...props} />} /> */}
+        <Route exact path="/login" render={props => (<><Navbar /> <FormikLoginForm {...props} /></>)} />
+        <Route exact path="/register" render={props => (<><Navbar /> <FormikRegisterForm {...props} /></>)} />
       </Switch>
 
       {/* other routes */}

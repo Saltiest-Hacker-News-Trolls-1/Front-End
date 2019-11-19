@@ -1,4 +1,4 @@
-import {START_POSTING, POST_SUCCESS, POST_FAILURE} from "../actions"
+import {START_POSTING, POST_SUCCESS, POST_FAILURE, SAVE_FAV, REMOVE_FAV} from "../actions/AuthAction"
 
 const initialState = {
     //isPosting,
@@ -16,6 +16,17 @@ const isLoggedIn = (state=initialState, action) => {
                 isLoggedIn: false,
                 error: null
             }
+
+
+        case SAVE_FAV:
+            return{
+                
+            }
+        case REMOVE_FAV:
+            return{
+
+            }
+            
         default:
             return state;
     }

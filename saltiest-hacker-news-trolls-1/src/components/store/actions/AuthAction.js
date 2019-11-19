@@ -1,4 +1,4 @@
-import {axiosWithAuth} from "../../utils/axiosWithAuth";
+import {axiosWithAuth} from "../../../utils/axiosWithAuth";
 
 
 export const START_GETTING = "START_GETTING";
@@ -38,3 +38,20 @@ export const post = post => dispatch => {
 //     axiosWithAuth()
 
 // }
+
+export const SAVE_FAV = "SAVE_FAV";
+export const REMOVE_FAV = "REMOVE_FAV";
+
+export const saveFav = id => {
+    return{
+        type: SAVE_FAV,
+        payload: id
+    }
+}
+
+export const removeFav = id => {
+    return{
+        type: REMOVE_FAV,
+        payload: id
+    }
+}

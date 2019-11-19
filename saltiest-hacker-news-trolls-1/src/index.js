@@ -10,7 +10,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {composeWithDevTools} from "redux-devtools-extension";
 import 'bootstrap/dist/css/bootstrap.css';
-import isLoggedIn from "./components/reducers/isLoggedIn"
+import isLoggedIn from "./components/store/reducers/AuthReducer"
 
 const store = createStore(isLoggedIn, composeWithDevTools(applyMiddleware(thunk, logger)))
 
