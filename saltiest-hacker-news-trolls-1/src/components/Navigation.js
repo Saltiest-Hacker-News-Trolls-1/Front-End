@@ -1,18 +1,21 @@
 import React from 'react';
 import { Nav, NavItem, NavLink, } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    const { pathname } = props.location;
+
     return (
         <Nav pills className="p-2 d-flex justify-content-around mb-2 shadow-sm">
             <NavItem>
-                <NavLink> <Link to="/login">Login</Link></NavLink>
+                <Link to="/login"><NavLink active={pathname === "/login"} >Login</NavLink></Link>
             </NavItem>
             <NavItem>
-                <NavLink><Link to="/signup">Sign Up</Link></NavLink>
+                <Link to="/signup"><NavLink active={pathname === "/signup"}>Sign Up</NavLink></Link>
             </NavItem>
         </Nav>
     );
 }
 
-export default Navbar;
+export default withRouter(Navbar);
