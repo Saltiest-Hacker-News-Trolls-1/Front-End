@@ -1,11 +1,11 @@
-import React, { useState /*, useEffect*/ } from "react";
+import React, { /*useState , useEffect*/ } from "react";
 import { Card, CardBody, Button, Alert, Col } from 'reactstrap';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 
-const LoginForm = ({ errors, touched, handleSubmit, handleChange }) => {
+const LoginForm = ({ errors, touched, handleSubmit, handleChange, values }) => {
 
     // const [credentials, setCredentials] = useState({
     //     username: "",
@@ -42,12 +42,12 @@ const LoginForm = ({ errors, touched, handleSubmit, handleChange }) => {
                         <h1 className="text-center">Login</h1>
                         <Form className="d-flex flex-column justify-content-around" onSubmit={handleSubmit}>
                             <label className="text-left mt-2">Username:</label>
-                            <Field type="text" name="username" placeholder="Username" onChange={handleChange} />
+                            <Field type="text" name="username" placeholder="Username" onChange={handleChange} value={values.username} />
                             {touched.username && errors.username && (
                                 <Alert color="danger">{errors.username}</Alert>
                             )}
                             <label className="text-left mt-2">Password:</label>
-                            <Field type="password" name="password" placeholder="Password" onChange={handleChange} />
+                            <Field type="password" name="password" placeholder="Password" onChange={handleChange} value={values.password} />
                             {touched.password && errors.password && (
                                 <Alert color="danger">{errors.password}</Alert>
                             )}
@@ -72,7 +72,7 @@ const FormikLoginForm = withFormik({
         password: Yup.string().required(`Please enter your password.`)
     }),
     handleSubmit(values) {
-
+        console.log(values)
         axiosWithAuth()
             .post("", values)
             .then(response => {
@@ -85,6 +85,7 @@ const FormikLoginForm = withFormik({
             });
     },
     handleChange(values, setValues) {
+        console.log(values)
         setValues({
             ...values,
             [values.target.name]: values.target.value

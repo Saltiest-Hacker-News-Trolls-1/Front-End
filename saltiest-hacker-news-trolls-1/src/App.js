@@ -4,15 +4,34 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import FormikLoginForm from './components/LoginForm';
 import FormikRegisterForm from "./components/RegisterForm";
-import PrivateRoute from "./components/PrivateRoute";
-import UserProfile from "./components/UserProfile";
+import PrivateRoute from "./utils/PrivateRoute";
+import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
 import Nav from './components/Nav'
+<<<<<<< HEAD
+import { axiosWithAuth } from './utils/axiosWithAuth';
+import {useHistory} from "react-router-dom"
+=======
 import About from './components/About'
+>>>>>>> 98a9a2ff727c7c18d473e46528164e49db379ee5
 
 function App() {
+  console.log(localStorage.token)
+  const history = useHistory()
+
+  const isLoggedIn = () => {
+    axiosWithAuth()
+      .post("")
+      .then(res => {
+        console.log("login", res)
+        localStorage.setItem("token", res.data.payload)
+        history.push("/protected")
+      })
+      .catch(err => console.log(err.response))
+  }
+
   return (
-    <div className="App">
+    <div className="App" onEnter={isLoggedIn}>
       <Switch>
         <Route exact path="/" render={props => <Nav {...props} />} />
         <Route exact path="/about" render={props => <About {...props} />} />
