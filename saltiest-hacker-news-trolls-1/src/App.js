@@ -8,12 +8,10 @@ import PrivateRoute from "./utils/PrivateRoute";
 import UserProfile from "./components/User/UserProfile";
 import Navbar from './components/Navigation';
 import Nav from './components/Nav'
-<<<<<<< HEAD
 import { axiosWithAuth } from './utils/axiosWithAuth';
-import {useHistory} from "react-router-dom"
-=======
-import About from './components/About'
->>>>>>> 98a9a2ff727c7c18d473e46528164e49db379ee5
+import {useHistory} from "react-router-dom";
+import About from './components/About';
+
 
 function App() {
   console.log(localStorage.token)
